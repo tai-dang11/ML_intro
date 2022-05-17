@@ -1,0 +1,87 @@
+Regularization parameter lambda = 0.000
+
+Initializing the network with the following structure (number of neurons per layer): [1 2 1]
+
+Initial Theta1 (the weights of each neuron, including the bias weight, are stored in the rows):
+	0.40000  0.10000
+	0.30000  0.20000
+
+Initial Theta2 (the weights of each neuron, including the bias weight, are stored in the rows):
+	0.70000  0.50000  0.60000
+
+
+Training set
+	Training instance 1
+		x: [0.13000]
+		y: [0.90000]
+	Training instance 2
+		x: [0.42000]
+		y: [0.23000]
+
+--------------------------------------------
+Computing the error/cost, J, of the network
+	Processing training instance 1
+	Forward propagating the input [0.13000]
+		a1: [1.00000   0.13000]
+
+		z2: [0.41300   0.32600]
+		a2: [1.00000   0.60181   0.58079]
+
+		z3: [1.34937]
+		a3: [0.79403]
+
+		f(x): [0.79403]
+	Predicted output for instance 1: [0.79403]
+	Expected output for instance 1: [0.90000]
+	Cost, J, associated with instance 1: 0.366
+
+	Processing training instance 2
+	Forward propagating the input [0.42000]
+		a1: [1.00000   0.42000]
+
+		z2: [0.44200   0.38400]
+		a2: [1.00000   0.60874   0.59484]
+
+		z3: [1.36127]
+		a3: [0.79597]
+
+		f(x): [0.79597]
+	Predicted output for instance 2: [0.79597]
+	Expected output for instance 2: [0.23000]
+	Cost, J, associated with instance 2: 1.276
+
+Final (regularized) cost, J, based on the complete training set: 0.82098
+
+
+
+--------------------------------------------
+Running backpropagation
+	Computing gradients based on training instance 1
+		delta3: [-0.10597]
+		delta2: [-0.01270   -0.01548]
+
+		Gradients of Theta2 based on training instance 1:
+			-0.10597  -0.06378  -0.06155
+
+		Gradients of Theta1 based on training instance 1:
+			-0.01270  -0.00165
+			-0.01548  -0.00201
+
+	Computing gradients based on training instance 2
+		delta3: [0.56597]
+		delta2: [0.06740   0.08184]
+
+		Gradients of Theta2 based on training instance 2:
+			0.56597  0.34452  0.33666
+
+		Gradients of Theta1 based on training instance 2:
+			0.06740  0.02831
+			0.08184  0.03437
+
+	The entire training set has been processes. Computing the average (regularized) gradients:
+		Final regularized gradients of Theta1:
+			0.02735  0.01333
+			0.03318  0.01618
+
+		Final regularized gradients of Theta2:
+			0.23000  0.14037  0.13756
